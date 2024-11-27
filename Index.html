@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento Deportivo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #4caf50, #81c784);
+            color: #fff;
+        }
+        header {
+            background: #388e3c;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            background: #66bb6a;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        .section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .section ul li {
+            background: #43a047;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        .search-bar {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .search-bar input {
+            width: 70%;
+            padding: 10px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+        }
+        .search-bar button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            background: #2e7d32;
+            color: #fff;
+            cursor: pointer;
+        }
+        .search-result {
+            display: none;
+            background: #1b5e20;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #388e3c;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Evento Deportivo</h1>
+</header>
+
+<div class="container">
+
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Busca un deportista">
+        <button onclick="searchAthlete()">Buscar</button>
+    </div>
+    
+    <div id="searchResult" class="search-result"></div>
+
+    <div class="section" id="competencia">
+        <h2>Competencia</h2>
+        <ul>
+            <li>Competencia 1: Atletismo</li>
+            <li>Competencia 2: Natación</li>
+            <li>Competencia 3: Ciclismo</li>
+            <li>Competencia 4: Gimnasia</li>
+            <li>Competencia 5: Tenis</li>
+            <li>Competencia 6: Fútbol</li>
+            <li>Competencia 7: Baloncesto</li>
+            <li>Competencia 8: Esgrima</li>
+            <li>Competencia 9: Rugby</li>
+            <li>Competencia 10: Voleibol</li>
+        </ul>
+    </div>
+
+    <div class="section" id="deportistas">
+        <h2>Deportistas</h2>
+        <ul>
+            <li>Juan Pérez</li>
+            <li>María Gómez</li>
+            <li>Roberto Fernández</li>
+            <li>Carla López</li>
+            <li>David Ortiz</li>
+            <li>Lucía Martínez</li>
+            <li>Pablo Ramírez</li>
+            <li>Sofía Herrera</li>
+            <li>Jorge Díaz</li>
+            <li>Andrea Castro</li>
+        </ul>
+    </div>
+
+    <div class="section" id="equipo">
+        <h2>Equipo</h2>
+        <ul>
+            <li>Equipo 1: Alpha</li>
+            <li>Equipo 2: Beta</li>
+            <li>Equipo 3: Gamma</li>
+            <li>Equipo 4: Delta</li>
+            <li>Equipo 5: Epsilon</li>
+            <li>Equipo 6: Zeta</li>
+            <li>Equipo 7: Eta</li>
+            <li>Equipo 8: Theta</li>
+            <li>Equipo 9: Iota</li>
+            <li>Equipo 10: Kappa</li>
+        </ul>
+    </div>
+
+    <div class="section" id="evento">
+        <h2>Evento</h2>
+        <ul>
+            <li>Evento 1: Campeonato Nacional</li>
+            <li>Evento 2: Juegos Olímpicos</li>
+            <li>Evento 3: Mundial de Fútbol</li>
+            <li>Evento 4: Copa Davis</li>
+            <li>Evento 5: Maratón Internacional</li>
+            <li>Evento 6: Liga de Baloncesto</li>
+            <li>Evento 7: Torneo de Rugby</li>
+            <li>Evento 8: Juegos Panamericanos</li>
+            <li>Evento 9: Grand Slam</li>
+            <li>Evento 10: Campeonato de Esgrima</li>
+        </ul>
+    </div>
+
+    <div class="section" id="ubicacion">
+        <h2>Ubicación del Evento</h2>
+        <ul>
+            <li>Ubicación 1: Estadio Nacional</li>
+            <li>Ubicación 2: Centro Acuático</li>
+            <li>Ubicación 3: Velódromo</li>
+            <li>Ubicación 4: Gimnasio Municipal</li>
+            <li>Ubicación 5: Cancha de Tenis</li>
+            <li>Ubicación 6: Campo de Fútbol</li>
+            <li>Ubicación 7: Coliseo</li>
+            <li>Ubicación 8: Arena Olímpica</li>
+            <li>Ubicación 9: Estadio de Rugby</li>
+            <li>Ubicación 10: Playa</li>
+        </ul>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Evento Deportivo. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    const data = {
+        "Juan Pérez": { competencia: "Atletismo", equipo: "Alpha", evento: "Campeonato Nacional", ubicacion: "Estadio Nacional" },
+        "María Gómez": { competencia: "Natación", equipo: "Beta", evento: "Juegos Olímpicos", ubicacion: "Centro Acuático" },
+        "Roberto Fernández": { competencia: "Ciclismo", equipo: "Gamma", evento: "Mundial de Fútbol", ubicacion: "Velódromo" },
+        "Carla López": { competencia: "Gimnasia", equipo: "Delta", evento: "Copa Davis", ubicacion: "Gimnasio Municipal" },
+        "David Ortiz": { competencia: "Tenis", equipo: "Epsilon", evento: "Maratón Internacional", ubicacion: "Cancha de Tenis" },
+        "Lucía Martínez": { competencia: "Fútbol", equipo: "Zeta", evento: "Liga de Baloncesto", ubicacion: "Campo de Fútbol" },
+        "Pablo Ramírez": { competencia: "Baloncesto", equipo: "Eta", evento: "Torneo de Rugby", ubicacion: "Coliseo" },
+        "Sofía Herrera": { competencia: "Esgrima", equipo: "Theta", evento: "Juegos Panamericanos", ubicacion: "Arena Olímpica" },
+        "Jorge Díaz": { competencia: "Rugby", equipo: "Iota", evento: "Grand Slam", ubicacion: "Estadio de Rugby" },
+        "Andrea Castro": { competencia: "Voleibol", equipo: "Kappa", evento: "Campeonato de Esgrima", ubicacion: "Playa" },
+    };
+
+    function searchAthlete() {
+        const input = document.getElementById('searchInput').value;
+        const result = data[input];
+        const resultDiv = document.getElementById('searchResult');
+        if (result) {
+            resultDiv.innerHTML = `
+                <h3>Resultados:</h3>
+                <p><strong>Competencia:</strong> ${result.competencia}</p>
+                <p><strong>Equipo:</strong> ${result.equipo}</p>
+                <p><strong>Evento:</strong> ${result.evento}</p>
+                <p><strong>Ubicación:</strong> ${result.ubicacion}</p>
+            `;
+            resultDiv.style.display = "block";
+        } else {
+            resultDiv.innerHTML = `<p>No se encontró al deportista.</p>`;
+            resultDiv.style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>
